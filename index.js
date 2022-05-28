@@ -9,5 +9,6 @@ if(PORT == null) {
 } else {
     server.listen(PORT, () => {
         console.log(`server is running on port ${PORT}`)
+        console.log(`environment is ${process.env.NODE_ENV}`);
     })
 }
