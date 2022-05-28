@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const users = require('./users')
 
 const server = express()
 
@@ -11,7 +12,8 @@ server.get('/', (req, res) => {
 })
 
 server.get('/api/users', (req, res) => {
-
+    let randomUsers = Math.floor(Math.random() * users.length)
+    res.send(`<h1>${users[randomUsers]}</h1>`)
 })
 
 server.post('/api/register', (req, res) => {
